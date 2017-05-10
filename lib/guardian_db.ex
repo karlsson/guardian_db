@@ -32,7 +32,8 @@ defmodule GuardianDb do
 
     config = Application.get_env(:guardian_db, GuardianDb, [])
 
-    @primary_key {:jti, :string, autogenerate: false}
+    @primary_key {:jti, :binary_id, autogenerate: false}
+    @foreign_key_type :binary_id
     @schema_name Keyword.get(config, :schema_name, "guardian_tokens")
     @schema_prefix Keyword.get(config, :prefix)
 

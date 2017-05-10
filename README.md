@@ -32,7 +32,7 @@ You will then need to add a migration:
       def change do
 
         create table(:guardian_tokens, primary_key: false) do
-          add :jti, :string, primary_key: true
+          add :jti, :uuid, primary_key: true
           add :aud, :string, primary_key: true
           add :typ, :string
           add :iss, :string
